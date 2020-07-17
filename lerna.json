@@ -1,0 +1,20 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "npmClient": "npm",
+      "verifyAccess": false,
+      "registry": "https://registry.npmjs.org/"
+    },
+    "add": {
+      "registry": "https://registry.npmjs.org/"
+    },
+    "bootstrap": {
+      "registry": "https://registry.npmjs.org/"
+    }
+  }
+}
