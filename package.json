@@ -2,22 +2,19 @@
   "name": "ml",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
+    "start": "nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zdliuccit/ml.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zdliuccit/ml/issues"
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "nodemon": "^2.0.4"
   },
-  "homepage": "https://github.com/zdliuccit/ml#readme",
   "devDependencies": {
-    "lerna": "^3.22.1",
-    "lerna-repo": "^1.0.0"
+    "koa-logger": "^3.2.1"
   }
 }
