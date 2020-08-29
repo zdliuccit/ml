@@ -1,22 +1,22 @@
 const Koa = require('koa')
 const app = new Koa()
+const appConfig = require('./../app.config')
+const koaLogger = require('koa-logger')
+const koaCompress = require('koa-compress')
+const middles = require('./middleWares')
+// 中间件,一组async函数，generator函数需要convert转换
+const middleWares = [
+  koaLogger(),
+  koaCompress(),
+  ...middles
+]
 
-app.use(async (ctx, next) => {
-  const start = Date.now();
-  await next();
-  const ms = Date.now() - start;
-  ctx.set('X-Response-Time', `${ms}ms`);
-});
-
-// logger
-
-app.use(async (ctx, next) => {
-  const start = Date.now();
-  await next();
-  const ms = Date.now() - start;
-});
-app.use(async ctx => {
-  ctx.body = 'Hello World Hello World'
+middleWares.forEach((middleware) => {
+  app.use(middleware)
 })
 
-app.listen(3000)
+app.on('error', (err) => {
+  console.error('Server error: \n%s\n%s ', err.stack || '')
+})
+
+app.listen(appConfig.appPort)

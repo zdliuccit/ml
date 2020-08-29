@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d793fda2-9f26-400a-9fc3-06e64edac861" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lerna.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/middleWares/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/middleWares/staticMiddleWare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/cli.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/commanders/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/commanders/dev/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/log.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/lib/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/ml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-cli/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ml-template/ml.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/middleWare" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,13 +44,14 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/middleWare" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/packages/ml-cli/lib/commanders" />
       <recent name="$PROJECT_DIR$/packages/ml-cli/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -79,7 +72,8 @@
       <workItem from="1594891605637" duration="14838000" />
       <workItem from="1595478686215" duration="598000" />
       <workItem from="1598682398055" duration="4000" />
-      <workItem from="1598689328847" duration="182000" />
+      <workItem from="1598689328847" duration="1234000" />
+      <workItem from="1598690823632" duration="1285000" />
     </task>
     <servers />
   </component>
