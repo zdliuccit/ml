@@ -8,7 +8,6 @@ const User = (router) => {
    * 用户列表
    */
   router.get('/user/list', async (ctx) => {
-    console.log(ctx);
     ctx.session.userinfo = {
       nickName: '秋风暮霞惋红曲',
       account: 'zdliuccit',
