@@ -5,17 +5,21 @@
   "main": "app/index.js",
   "scripts": {
     "start": "nodemon app/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "pm2 start pm2.config.js --env production"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "i": "^0.3.6",
+    "keygrip": "^1.1.0",
     "koa": "^2.13.0",
-    "koa-router": "^9.4.0",
-    "nodemon": "^2.0.4"
-  },
-  "devDependencies": {
     "koa-compress": "^5.0.1",
-    "koa-logger": "^3.2.1"
+    "koa-logger": "^3.2.1",
+    "koa-router": "^9.4.0",
+    "koa-session": "^6.0.0",
+    "koa-static": "^5.0.0",
+    "mongodb": "^3.6.0",
+    "nodemon": "^2.0.4"
   }
 }
