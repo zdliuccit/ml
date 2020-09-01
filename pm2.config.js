@@ -11,9 +11,6 @@ module.exports = {
     instances: 4, // 进程数 1、数字 2、'max'根据cpu内核数
     max_memory_restart: '1G', // 当内存超过1024M时自动重启
     watching: true,
-    env_test: {
-      NODE_ENV: 'production'
-    },
     env_production: {
       NODE_ENV: 'production'
     }

@@ -1,5 +1,5 @@
 /**
- * user model
+ * User model
  */
 
 import mongoose from 'mongoose'
@@ -34,6 +34,6 @@ UserSchema.statics = {
   }
 }
 
-const UserModel = mongoose.model('user', UserSchema);
+const UserModel = mongoose.model('User', UserSchema);
 
 export default UserModel
