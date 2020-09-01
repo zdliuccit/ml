@@ -95,27 +95,58 @@ options具有以下选项的对象（这些选项的其他说明在此处）：
 - `disableSourceMapSupport`
 
 
+# 在pm2基础上，Nginx配置upstream实现负载均衡
+
+* netstat -nptl  查看nginx启动服务的端口
 
 
+### nginx集群
 
+#### 在http节点下，加入upstream节点。
+```bash
+upstreams在pm2基础上，Nginx配置upstream实现负载均衡
+erver_name {
+  ip_hash,
+  server  172.16.119.198:8018 max_fails=2 fail_timeout=30s weight=1;
+  server  172.16.119.198:8019 max_fails=2 fail_timeout=30s weight=1;
+  server  172.16.119.198:8020 max_fails=2 fail_timeout=30s weight=1;
+  .....
+}
+```
+1、轮询(weight) 
+  指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。默认当weight不指定时，
+各服务器weight相同，每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除
 
+2、ip_hash 
+  每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session不能跨服务器的问题。如果后端服务器down掉，要手工down掉。
 
+#### 将server节点下的location节点中的proxy_pass配置为：http:// + server_name，即“ http://server_name”.
+```bash
+// 反向代理
+location / { 
+  proxy_pass http://server_name;
+  proxy_set_header Host localhost;
+  proxy_set_header X-Forwarded-For $remote_addr
+}
+```
 
+语法规则： location [=|~|~*|^~] /uri/ { … }
 
+= 开头表示精确匹配
 
+^~ 开头表示uri以某个常规字符串开头，理解为匹配 url路径即可。nginx不对url做编码，因此请求为/static/20%/aa，可以被规则^~ /static/ /aa匹配到（注意是空格）。以xx开头
 
+~ 开头表示区分大小写的正则匹配                     以xx结尾
 
+~* 开头表示不区分大小写的正则匹配                以xx结尾
 
+!~和!~*分别为区分大小写不匹配及不区分大小写不匹配 的正则
 
+/ 通用匹配，任何请求都会匹配到。
 
+......
 
-
-
-
-
-
-
-
+详细配置参考文档
 
 
 
