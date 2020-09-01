@@ -1,7 +1,11 @@
-const router = require('koa-router')();
-const User = require('./controller/User')
+/**
+ * 模块化处理router
+ */
+import Router from 'koa-router'
+import user from './user'
 
-module.exports = function () {
-  User(router)
-  return router
-}
+const router = new Router()
+
+router.use('/user', user.routes(), user.allowedMethods())
+
+export default router

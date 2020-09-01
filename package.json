@@ -4,14 +4,17 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start": "nodemon app/index.js",
+    "start": "cross-env NODE_ENV=development && nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "app": "pm2 start pm2.config.js --env production"
+    "app": "cross-env NODE_ENV=production && pm2 start pm2.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "i": "^0.3.6",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "cross-env": "^7.0.2",
     "keygrip": "^1.1.0",
     "koa": "^2.13.0",
     "koa-compress": "^5.0.1",
@@ -19,7 +22,7 @@
     "koa-router": "^9.4.0",
     "koa-session": "^6.0.0",
     "koa-static": "^5.0.0",
-    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.2",
     "nodemon": "^2.0.4"
   }
 }
