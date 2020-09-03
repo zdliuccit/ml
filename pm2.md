@@ -150,6 +150,17 @@ location / {
 
 
 
+{
+  "appid": "86101",                        
+  "secret": "e3451864f244046d6a7b8fed836dff9701659fd3"
+}
+
+
+## CI工具
+ 
+* Travis-CI 
+>Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）  
+
 
 
 
