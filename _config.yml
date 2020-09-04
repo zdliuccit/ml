@@ -1,0 +1,8 @@
+deploy:
+  - type: git
+    repo: https://github.com/zdliuccit/ml.git
+    branch: master
+
+
+
+

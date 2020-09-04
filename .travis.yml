@@ -3,10 +3,24 @@ node_js:
   - 9
   - 10
   - 11
+
+
+cache:
+  - directories:
+      - node_modules
+
+
 before_install:
   - pm2 stop ml-app
   - rm -rf node_modules
   - npm i
+
 install:
   - npm i
   - pm2 start
+
+after_script:
+  - git config user.name "zdliuccit"
+  - git config user.email "335758663@qq.com"
+  - sed -i "s/Travis/${Travis}/g" ./_config.yml
+  - hexo deploy
