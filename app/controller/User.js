@@ -7,7 +7,11 @@ class User extends Base {
   }
   
   async getUserList(ctx, next) {
-    ctx.body = '用户列表'
+    ctx.body = {
+      data: '用户列表',
+      code: 200,
+      message: ''
+    }
   }
   
   async getUser(ctx, next) {
