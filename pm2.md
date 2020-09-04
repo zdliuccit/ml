@@ -161,6 +161,7 @@ location / {
 * Travis-CI 
 >Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）  
 
+(文档参考阮一峰的)[http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html]
 
 
 
