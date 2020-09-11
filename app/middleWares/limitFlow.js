@@ -5,13 +5,24 @@
 
 const option = {
   rate: 100, // 令牌加入桶的速度
-  threshold: 100, // 桶的上限
+  threshold: 2, // 桶的上限
 }
 export default () => {
+  let bucket = 0
+  const threshold = option.threshold
   return async (ctx, next) => {
-    let bucket = 0
-    const rate = option.rate
-    const threshold = option.threshold
-    
+    console.log('当前bucket数------>', bucket)
+    if (bucket > 100) {
+      return ctx.body = {
+        data: null,
+        status: false,
+        message: '访问人数太多了，请稍后重试'
+      }
+    }
+    bucket += 1
+    console.log('bucket数 + 1 ------>当前', bucket)
+    next()
+    bucket -= 1
+    console.log('bucket数 - 1 ------>当前', bucket)
   }
 }

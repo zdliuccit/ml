@@ -15,12 +15,13 @@ class User extends Base {
   }
   
   async getUser(ctx, next) {
-    const userinfo = {
+    console.log('getUser')
+    const userInfo = {
       nickName: '秋风暮霞惋红曲',
       account: 'zdliuccit',
     }
-    ctx.session.userinfo = userinfo
-    this.data.data = userinfo
+    ctx.session.userInfo = userInfo
+    this.data.data = userInfo
     this.data.status = true
     ctx.body = this.data
   }
