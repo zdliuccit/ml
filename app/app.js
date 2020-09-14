@@ -28,10 +28,8 @@ middles(app)
 
 /**
  * 启动路由
- * allowedMethods,在当所有路由中间件最后调用.此时根据 ctx.status 设置 response 响应头
  */
-app.use(router.routes());
-app.use(router.allowedMethods());
+router(app)
 
 /**
  * app错误监听

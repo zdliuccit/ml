@@ -2,23 +2,16 @@
  * 模块化处理router
  */
 import Router from 'koa-router'
-import user from './user'
+import User from './user'
 
 const router = new Router()
 
-// router.use('/user', user.routes(), user.allowedMethods())
-router.get('/', async (ctx) => {
-  console.log('')
-  const userInfo = {
-    nickName: '秋风暮霞惋红曲',
-    account: 'zdliuccit',
-  }
-  ctx.session.userInfo = userInfo
-  ctx.body = {
-    message: '',
-    status: false,
-    data: userInfo
-  }
-})
-
-export default router
+/**
+ * 启动路由
+ * allowedMethods,在当所有路由中间件最后调用.此时根据 ctx.status 设置 response 响应头
+ */
+export default (app) => {
+  router.use('/user', User.routes(), User.allowedMethods())
+  
+  app.use(router.routes(), router.allowedMethods())
+}

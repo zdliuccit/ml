@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const httpUrl = 'http://localhost:7878/user/getUser'
+const httpUrl = 'http://localhost:7878/user/list'
 const heapStack = [] // // 堆栈
 
 const Concurrent = (number) => {
@@ -8,9 +8,11 @@ const Concurrent = (number) => {
     heapStack.push(() => axios.get(httpUrl))
   }
   heapStack.forEach((func, index) => {
-    func().then(res => {
-      console.log(`第${index}次接口请求成功`, res.data)
-    })
+    setTimeout(() => {
+      func().then(res => {
+        console.log(`第${index}次接口请求成功`, res.data)
+      })
+    }, 100)
   })
 }
-Concurrent(280)
+Concurrent(500)

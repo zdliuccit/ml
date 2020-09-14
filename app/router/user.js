@@ -1,9 +1,8 @@
 import UserController from '../controller/User'
 import Router from 'koa-router'
 
-const router = new Router();
+const User = new Router();
 
-router.get('/list', UserController.getUserList);
-router.get('/getUser', UserController.getUser);
+User.get('/list', UserController.getUserList);
 
-export default router
+export default User
