@@ -9,11 +9,12 @@ const Concurrent = (number) => {
     heapStack.push(() => axios.get(httpUrl))
   }
   heapStack.forEach((func, index) => {
-    setTimeout(() => {
-      func().then(res => {
-        console.log(`第${index}次接口请求成功`, res.data)
-      })
-    }, 100)
+    func().then(res => {
+      console.log(`第${index}次接口请求成功`, res.data)
+    })
   })
+  // setTimeout(() => {
+  //   Concurrent(number)
+  // }, 1000)
 }
-Concurrent(1000)
+Concurrent(200)
