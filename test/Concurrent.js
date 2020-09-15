@@ -1,6 +1,7 @@
 const axios = require('axios')
 
-const httpUrl = 'http://localhost:7878/user/list'
+// const httpUrl = 'http://localhost:7878/user/list'
+const httpUrl = 'http://47.99.66.195:7676/user/list'
 const heapStack = [] // // 堆栈
 
 const Concurrent = (number) => {
@@ -15,4 +16,4 @@ const Concurrent = (number) => {
     }, 100)
   })
 }
-Concurrent(500)
+Concurrent(1000)
