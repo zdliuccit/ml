@@ -4,7 +4,14 @@ import appConfig from './../../app.config'
 
 const NODE_ENV = process.env.NODE_ENV
 
-mongoose.connect(appConfig.db.url, { useNewUrlParser: true, autoIndex: NODE_ENV === 'development' });
+mongoose.connect(
+  appConfig.db.url,
+  {
+    useNewUrlParser: true,
+    bufferCommands: false,
+    autoIndex: NODE_ENV === 'development'
+  }
+);
 
 const db = mongoose.connection;
 

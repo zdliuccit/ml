@@ -38,7 +38,7 @@ UserSchema.statics = {
    * @param data
    */
   async findUser(data = {}) {
-    return await this.find(data);
+    return await this.findOne(data);
   },
   /**
    * 创建用户
@@ -47,7 +47,15 @@ UserSchema.statics = {
   async register(data = {}) {
     const result = await this.create(data);
     return result
-  }
+  },
+  /**
+   * 删除
+   * @param data
+   */
+  async delete(data) {
+    const result = await this.remove(data);
+    return result
+  },
 }
 
 const UserModel = mongoose.model('User', UserSchema);
