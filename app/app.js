@@ -1,5 +1,5 @@
 import Koa from 'koa'
-// import Logger from 'koa-logger'
+import Logger from 'koa-logger'
 import Compress from 'koa-compress'
 import Session from 'koa-session'
 import KeyGrip from 'keygrip'
@@ -18,7 +18,7 @@ const SESSION_CONFIG = {
   renew: false, /** 当会话即将过期时续订会话，因此我们可以始终保持用户登录。*/
 };
 app.use(Session(SESSION_CONFIG, app));
-// app.use(Logger())
+app.use(Logger())
 app.use(Compress())
 
 /**

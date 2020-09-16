@@ -12,6 +12,5 @@ const router = new Router()
  */
 export default (app) => {
   router.use('/user', User.routes(), User.allowedMethods())
-  
   app.use(router.routes(), router.allowedMethods())
 }

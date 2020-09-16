@@ -2,19 +2,30 @@
  * User model
  */
 
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
-const UserSchema = mongoose.Schema({
-  account: String,
-  password: String,
-  nickName: String,
-  avatar: String,
-  phone: {
+const UserSchema = Schema({
+  account: {
     type: String,
-    min: 10,
-    max: 20
+    required: true,
+    trim: true
   },
-  authority: Number,
+  password: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  nickName: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  phone: {
+    type: Number,
+    min: 10,
+    max: 20,
+    required: true,
+  },
   createTime: {
     type: Date,
     default: Date.now
@@ -22,15 +33,20 @@ const UserSchema = mongoose.Schema({
 });
 
 UserSchema.statics = {
-  /* 查找 */
+  /**
+   * 查找
+   * @param data
+   */
   async findUser(data = {}) {
-    const result = await this.find(data);
-    return result
+    return await this.find(data);
   },
-  /* 创建用户 */
-  async createUser(data = {}) {
+  /**
+   * 创建用户
+   * @param data
+   */
+  async register(data = {}) {
     const result = await this.create(data);
-    return result;
+    return result
   }
 }
 

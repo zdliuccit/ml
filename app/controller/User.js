@@ -1,11 +1,6 @@
-import Base from './Base'
+import { UserModel } from './../db'
 
-class User extends Base {
-  constructor(props) {
-    super(props)
-    this.getUserList = this.getUserList.bind(this)
-  }
-  
+class User {
   async getUserList(ctx, next) {
     const userInfo = [
       {
@@ -18,9 +13,20 @@ class User extends Base {
         resolve()
       }, 2000)
     }))
-    this.data.data = userInfo
-    this.data.status = true
-    ctx.body = this.data
+    ctx.body = [userInfo]
+  }
+  
+  async login(ctx) {
+    const user = await UserModel.findUser()
+    ctx.body = user
+  }
+  
+  async signOut(ctx) {
+  }
+  
+  async register(ctx) {
+    const result = await UserModel.register()
+    ctx.body = result
   }
 }
 
