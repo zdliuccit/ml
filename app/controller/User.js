@@ -1,18 +1,14 @@
-import { UserModel } from './../db'
-
 class User {
   
   async login(ctx) {
-    const user = await UserModel.findUser()
-    ctx.body = user
+    ctx.body = ''
   }
   
   async signOut(ctx) {
   }
   
   async register(ctx) {
-    const result = await UserModel.register()
-    ctx.body = result
+    ctx.body = ''
   }
 }
 
