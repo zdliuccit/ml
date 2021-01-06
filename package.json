@@ -14,7 +14,7 @@
     "@babel/core": "7.11.5",
     "@babel/preset-env": "7.11.5",
     "@babel/register": "7.11.5",
-    "axios": "0.20.0",
+    "axios": "0.21.1",
     "keygrip": "1.1.0",
     "koa": "2.13.0",
     "koa-compress": "5.0.1",
